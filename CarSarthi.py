@@ -6,8 +6,8 @@ import time
 from model.filter import get_matching_cars
 
 # Load trained model
-model = joblib.load("car_price_model.pkl")
-dataset=pd.read_csv("cleaned_cars.csv")
+model = joblib.load("model/car_price_model.pkl")
+dataset=pd.read_csv("data/cleaned_cars.csv")
 
 st.set_page_config(page_title=" CarSarthi - Car Resale Price Estimator", layout="centered", page_icon='🚘')
 
@@ -240,3 +240,10 @@ if submitted:
                     - **Fuel Tank Capacity**: {row['Fuel Tank Capacity']} L
                     - **Estimated Resale Price**: ₹{int(row['Price']):,}
                     """)
+st.markdown("---")
+st.markdown(
+    "<div style='text-align: center; color: #E0E0D1; font-size: 14px;'>"
+    "© 2025 <strong>CarSarthi</strong> by Parnika Mathur. All rights reserved."
+    "</div>",
+    unsafe_allow_html=True
+)
